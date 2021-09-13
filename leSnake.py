@@ -1,9 +1,7 @@
-# snakeDir is not assigned in main
-
 import pygame
 import random
 
-FPS = 10
+FPS = 5
 
 BLACK = (0, 0, 0)
 GRAY = (127, 127, 127)
@@ -13,7 +11,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 
-pygame.display.set_caption('Snake')
+pygame.display.set_caption('leSnake')
 clock = pygame.time.Clock()
 
 xSize = 20
@@ -56,7 +54,6 @@ def initMap():
         map.append(tmp)
     
     map[snakeList[0][0]][snakeList[0][1]] = 'X'
-    
 
     if snakeDir[0] == 'u': # UP
         for i in range(1,5):
@@ -161,8 +158,6 @@ def main():
                         snakeDir[0] = 'r'
                         keyPress = True
         
-        
-        
         gameDisplay.fill(BLACK)
         drawMap()
 
@@ -176,8 +171,5 @@ def main():
         pygame.display.update()
         clock.tick(FPS)
         
-
-
-
 if __name__ == "__main__":
     main()
